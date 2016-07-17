@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/browser.min.js"></script>
+  </head>
+  <body>
+ <div id="container"></div>
+    <script type="text/babel">
+    var HelloWorld=react.creatClass({
+      render:function(){
+        return(
+          <h1>Hello{this.props.name}</h1>
+        )
+      }
+    });
+    ReactDom.render(
+                    <div>
+                    <HelloWorld name="lalla"/>
+                    <HelloWorld name="sasa"/>
+                    <HelloWorld name="wawa"/>
+                    </div>
+    )
+
+  </script>
+  </body>
+</html>

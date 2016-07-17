@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>no jquery</title>
+</head>
+<body>
+
+  <div id="container"></div>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/browser.min.js"></script>
+  <script type="text/babel">
+    var Counter=React.createClass({
+      getInitialState:function(){
+        return{
+          count:0,
+          // display:'true',
+        };
+      },
+      add:function(){
+        this.setState({
+          count:this.state.count+1,
+          // display:!this.state.display
+        });
+      },
+      substract:function(){
+        this.setState({
+          count:this.state.count-1
+        });
+      },
+      render:function(){
+        // var displayshow=this.state.display?'block':'none';
+        // var styles={
+        //   mydiv:{
+        //     width:'300px',
+        //     height:'500px',
+        //     backgroundColor:"red",
+        //     marginTop:'20px',
+        //     display:displayshow,
+        //   }
+        // }
+        return(
+          <div>
+          <h1>数量{this.state.count}</h1>
+          <button onClick={this.add}>+1</button>
+          <button onClick={this.substract}>-1</button>
+          {/*<div style={styles.mydiv}></div>*/}
+          </div>
+        );
+      }
+
+    });
+    ReactDOM.render(<Counter />,document.getElementById('container'))
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/browser.min.js"></script>
+  </head>
+  <body>
+ <div id="container"></div>
+    <script type="text/babel">
+    var ExampleApplication = React.createClass({
+      add:function(){
+        console.log("helloworld")
+      },
+       render: function() {
+         return(
+              <div>
+                 <button onClick={this.add}>+1</button>
+                 <button>-1</button>
+               </div>
+       )}
+     });
+     ReactDOM.render(
+             <ExampleApplication />,
+             document.getElementById('container')
+           );
+  </script>
+  </body>
+</html>
